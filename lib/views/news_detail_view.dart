@@ -4,6 +4,13 @@ import 'package:get/get.dart';
 
 import '../models/news_article.dart';
 
+/// A stateless widget that displays the details of a news article.
+/// 
+/// This view is used to present the full content of a selected news item,
+/// including its title, image, and body text.
+/// 
+/// The [NewsDetailView] widget is typically navigated to from a list of news
+/// articles, providing a detailed view of the selected article.
 class NewsDetailView extends StatelessWidget {
    final NewsArticle article = Get.arguments;
 

@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../models/news_article.dart';
 
+/// A stateless widget that represents a news card.
+/// 
+/// This widget is used to display a news article with relevant information
+/// such as the title, description, and image.
+/// 
+/// The [NewsCard] widget is typically used within a list or grid to display
+/// multiple news articles in a structured format.
 class NewsCard extends StatelessWidget {
   final NewsArticle article;
 

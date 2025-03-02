@@ -4,6 +4,10 @@ import 'home_view.dart';
 import 'profile_view.dart';
 import 'settings_view.dart';
 
+/// A stateless widget that represents the main view of the application.
+/// 
+/// This widget serves as the primary interface for the user, displaying
+/// the main content and navigation options of the news app.
 class MainView extends StatelessWidget {
   final RxInt selectedIndex = 0.obs; // Track the selected tab
 

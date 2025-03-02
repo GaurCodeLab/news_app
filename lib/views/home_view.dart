@@ -32,6 +32,16 @@ class HomeView extends StatelessWidget {
       ),
       body: Obx(() {
         if (newsVM.isLoading.value) {
+          /// Builds a scrollable list of widgets.
+          /// 
+          /// This method returns a `ListView.builder` which lazily builds its children
+          /// on demand. The `itemBuilder` callback is called with the context and the 
+          /// index of the item to be built.
+          /// 
+          /// - `context`: The `BuildContext` in which the widget is built.
+          /// - `index`: The index of the item to be built.
+          /// 
+          /// Returns a `ListView.builder` widget.
           return ListView.builder(itemBuilder: (context, index) {
             return Shimmer.fromColors(
               baseColor: Colors.grey[300]!,
@@ -60,6 +70,21 @@ class HomeView extends StatelessWidget {
             onRefresh: () async {
               await newsVM.fetchNews(refresh: true);
             },
+            /// A widget that builds a scrollable list of items.
+            /// 
+            /// This `ListView.builder` constructor creates a list view whose
+            /// children are created on demand. This is particularly useful for
+            /// lists with a large number of children because the builder is called
+            /// only for those children that are actually visible.
+            /// 
+            /// The `itemBuilder` callback will be called with indices greater than
+            /// or equal to zero and less than `itemCount`. The `itemBuilder` should
+            /// always return a non-null widget, and may return different widget types
+            /// for different indices.
+            /// 
+            /// The `itemCount` parameter specifies the number of items in the list.
+            /// If `itemCount` is null, the list is infinite.
+           
             child: ListView.builder(
              itemCount: newsVM.articles.length,
               itemBuilder: (context, index) {
